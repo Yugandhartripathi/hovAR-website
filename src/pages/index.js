@@ -1,15 +1,20 @@
-import React from "react";
-import styled, { keyframes, createGlobalStyle } from "styled-components";
-import Monoton from "../../styles/fonts/Monoton-Regular.ttf";
-import Assistant from "../../styles/fonts/Assistant-ExtraLight.ttf";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowDown, faHeart, faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import { fab, faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { Helmet } from "react-helmet";
-import Typist from 'react-typist';
+import React from "react"
+import styled, { keyframes, createGlobalStyle } from "styled-components"
+import Monoton from "../../styles/fonts/Monoton-Regular.ttf"
+import Assistant from "../../styles/fonts/Assistant-ExtraLight.ttf"
+import { library } from "@fortawesome/fontawesome-svg-core"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import {
+  faArrowDown,
+  faHeart,
+  faEnvelope,
+} from "@fortawesome/free-solid-svg-icons"
+import { fab, faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons"
+import { Helmet } from "react-helmet"
+import Typist from "react-typist"
+import ResponsivePlayer from "react-player"
 
-library.add(faArrowDown, faHeart, faEnvelope, fab, faGithub, faLinkedin);
+library.add(faArrowDown, faHeart, faEnvelope, fab, faGithub, faLinkedin)
 
 /*Styled Components*/
 
@@ -23,7 +28,7 @@ const down = keyframes`
   75% {
     transform: translateY(-10px);
   }
-`;
+`
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -43,12 +48,12 @@ const GlobalStyle = createGlobalStyle`
   body::-webkit-scrollbar {
       display: none;
   }
-`;
+`
 
 const Container = styled.div`
   backgroud-color: black;
   min-height: 100vh;
-`;
+`
 
 const Main = styled.div`
   background-color: black;
@@ -59,7 +64,7 @@ const Main = styled.div`
   justify-content: center;
   align-items: center;
   color: #c6e2ff;
-`;
+`
 
 const VideoBackground = styled.video`
   height: 110vh;
@@ -67,8 +72,8 @@ const VideoBackground = styled.video`
   position: absolute;
   z-index: 1;
   top: -5vh;
-  left: 0;  
-`;
+  left: 0;
+`
 
 const Logo = styled.div`
   z-index: 2;
@@ -104,17 +109,16 @@ const Logo = styled.div`
     width: 300px;
     height: 180px;
   }
-
-`;
+`
 
 const LogoHov = styled.div`
   font-family: "Assistant", cursive;
-  color: #66FF7F;
-  border-bottom: 10px solid #66FF7F;
+  color: #66ff7f;
+  border-bottom: 10px solid #66ff7f;
   position: relative;
-  &:after{
-    content: '';
-    background: linear-gradient(to top,#66FF7F,#0022CC);
+  &:after {
+    content: "";
+    background: linear-gradient(to top, #66ff7f, #0022cc);
     border-radius: 20px;
     width: 10px;
     height: 182px;
@@ -124,14 +128,14 @@ const LogoHov = styled.div`
     left: 260px;
     transform: skew(-12deg);
   }
-`;
+`
 
 const LogoAR = styled.div`
-  font-family: "sans-serif", cursive;
+  font-family: cursive;
   z-index: 2;
-  color: #0022CC;
-  border-top: 10px solid #0022CC;
-`;
+  color: #0022cc;
+  border-top: 10px solid #0022cc;
+`
 
 const Subheading = styled.span`
   z-index: 2;
@@ -161,7 +165,7 @@ const Subheading = styled.span`
     font-size: 15px;
     width: 250px;
   }
-`;
+`
 
 const Arrowdown = styled.div`
   z-index: 2;
@@ -170,7 +174,7 @@ const Arrowdown = styled.div`
   left: 50%;
   margin-left: -15px;
   animation: ${down} 1800ms ease-in-out infinite;
-`;
+`
 
 const Mission = styled.section`
   min-height: 100vh;
@@ -184,7 +188,7 @@ const Mission = styled.section`
   @media (max-width: 420px) {
     padding: 10px;
   }
-`;
+`
 
 const MissionBody = styled.div`
   background-color: black;
@@ -196,16 +200,16 @@ const MissionBody = styled.div`
   flex-flow: column;
   padding: 15px;
   font-family: "Assistant", sans-serif;
-`;
+`
 
 const MissionHead = styled.span`
   font-size: 55px;
   border-bottom: 1px solid white;
   padding-bottom: 7px;
   margin-bottom: 45px;
-`;
+`
 
-const MissionDesc = styled.p`
+const MissionDesc = styled.div`
   text-align: center;
   font-size: 23px;
   font-weight: 400;
@@ -213,7 +217,7 @@ const MissionDesc = styled.p`
   @media (max-width: 420px) {
     font-size: 20px;
   }
-`;
+`
 
 const Why = styled.section`
   min-height: 100vh;
@@ -227,7 +231,7 @@ const Why = styled.section`
   @media (max-width: 420px) {
     padding: 10px;
   }
-`;
+`
 
 const Whyus = styled.div`
   background-color: black;
@@ -239,14 +243,14 @@ const Whyus = styled.div`
   flex-flow: column;
   padding: 15px;
   font-family: "Assistant", sans-serif;
-`;
+`
 
 const Whyheading = styled.span`
   font-size: 55px;
   border-bottom: 1px solid white;
   padding-bottom: 7px;
   margin-bottom: 45px;
-`;
+`
 
 const WhyContent = styled.span`
   width: 100%;
@@ -257,7 +261,7 @@ const WhyContent = styled.span`
   align-items: center;
   flex-flow: row;
   flex-wrap: wrap;
-`;
+`
 
 const WhyDesc = styled.div`
   height: 100%;
@@ -265,7 +269,7 @@ const WhyDesc = styled.div`
   justify-content: space-evenly;
   align-items: center;
   flex-flow: column;
-`;
+`
 
 const Whytext = styled.span`
   max-width: 600px;
@@ -275,7 +279,7 @@ const Whytext = styled.span`
   @media (max-width: 420px) {
     font-size: 20px;
   }
-`;
+`
 
 const WhyButtons = styled.span`
   width: 100%;
@@ -285,9 +289,9 @@ const WhyButtons = styled.span`
   justify-content: space-evenly;
   flex-flow: row;
   flex-wrap: wrap;
-`;
+`
 
-const WhyButton1  = styled.span`
+const WhyButton1 = styled.span`
   width: 250px;
   border: 1px solid #ffff19;
   display: flex;
@@ -318,8 +322,8 @@ const WhyButton1  = styled.span`
   @media (max-width: 420px) {
     font-size: 20px;
   }
-`; 
-const WhyButton2  = styled.span`
+`
+const WhyButton2 = styled.span`
   width: 250px;
   border: 1px solid #f50057;
   display: flex;
@@ -350,10 +354,10 @@ const WhyButton2  = styled.span`
   @media (max-width: 420px) {
     font-size: 20px;
   }
-`; 
-const WhyButton3  = styled.span`
+`
+const WhyButton3 = styled.span`
   width: 250px;
-  border: 1px solid #1966FF;
+  border: 1px solid #1966ff;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -362,11 +366,11 @@ const WhyButton3  = styled.span`
   font-family: "Assistant", sans-serif;
   font-weight: 400;
   font-size: 23px;
-  color: #1966FF;
+  color: #1966ff;
   transition: all 180ms ease-in-out;
 
   &:hover {
-    box-shadow: inset 280px 0px 0 0 #1966FF;
+    box-shadow: inset 280px 0px 0 0 #1966ff;
     cursor: pointer;
     color: black;
   }
@@ -382,10 +386,10 @@ const WhyButton3  = styled.span`
   @media (max-width: 420px) {
     font-size: 20px;
   }
-`; 
-const WhyButton4  = styled.span`
+`
+const WhyButton4 = styled.span`
   width: 250px;
-  border: 1px solid #22C677;
+  border: 1px solid #22c677;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -394,11 +398,11 @@ const WhyButton4  = styled.span`
   font-family: "Assistant", sans-serif;
   font-weight: 400;
   font-size: 23px;
-  color: #22C677;
+  color: #22c677;
   transition: all 180ms ease-in-out;
 
   &:hover {
-    box-shadow: inset 280px 0px 0 0 #22C677;
+    box-shadow: inset 280px 0px 0 0 #22c677;
     cursor: pointer;
     color: black;
   }
@@ -414,17 +418,18 @@ const WhyButton4  = styled.span`
   @media (max-width: 420px) {
     font-size: 20px;
   }
-`; 
+`
 const WhyGraphic = styled.div`
   position: relative;
+  top: -100px;
   height: 0;
-  width: 400px;
-  padding-top: 55%;
+  min-width: 400px;
+  padding-top: 56.25%;
   border-radius: 10px;
   object-fit: cover;
-  background: white;
+  background: black;
   transform: perspective(400px) skewX(-5deg) rotateY(-5deg);
-`;
+`
 
 /*
 const WhyVRScreen = styled.span`
@@ -476,7 +481,7 @@ const ContactSection = styled.div`
   @media (max-width: 420px) {
     padding-top: 40px;
   }
-`;
+`
 
 const FindHead = styled.div`
   font-size: 55px;
@@ -486,7 +491,7 @@ const FindHead = styled.div`
   @media (max-width: 600px) {
     margin-bottom: 50px;
   }
-`;
+`
 
 const IconsContainer = styled.div`
   min-height: 160px;
@@ -496,7 +501,7 @@ const IconsContainer = styled.div`
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
-`;
+`
 
 const GithubLink = styled.div`
   width: 180px;
@@ -524,7 +529,7 @@ const GithubLink = styled.div`
   @media (max-width: 420px) {
     font-size: 20px;
   }
-`;
+`
 
 const EmailLink = styled.div`
   width: 180px;
@@ -552,7 +557,7 @@ const EmailLink = styled.div`
   @media (max-width: 420px) {
     font-size: 20px;
   }
-`;
+`
 
 const LinkedINLink = styled.div`
   width: 180px;
@@ -580,7 +585,7 @@ const LinkedINLink = styled.div`
   @media (max-width: 420px) {
     font-size: 20px;
   }
-`;
+`
 
 const Alink = styled.a`
   text-decoration: none;
@@ -594,7 +599,7 @@ const Alink = styled.a`
     outline: none;
     text-decoration: none;
   }
-`;
+`
 
 const Footer = styled.footer`
   font-weight: 400;
@@ -602,114 +607,220 @@ const Footer = styled.footer`
   flex-flow: row;
   justify-content: center;
   align-items: center;
-`;
+`
 
 const HighlightReel = styled.div`
   font-weight: 800;
   color: #0f0;
-`;
+`
 
 const handleArrowClick = e => {
-  e.preventDefault();
+  e.preventDefault()
 
   // get the id of the element to scroll to. e.g. "#Mission"
-  const targetQuery = e.currentTarget.getAttribute("href");
+  const targetQuery = e.currentTarget.getAttribute("href")
 
   // scroll the element into view
-  document.querySelector(targetQuery).scrollIntoView({ behavior: "smooth" });
-};
+  document.querySelector(targetQuery).scrollIntoView({ behavior: "smooth" })
+}
 
 /* Main */
 
-export default () => (
-  <Container>
-    <GlobalStyle />
-    <Helmet>
-      <meta charset="utf-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <meta
-        name="hovAR"
-        content="Changing Realities!"
-      />
-      <title>hovAR</title>
-      <link
-        rel="icon"
-        type="image/png"
-        href="icon.png"
-        sizes="64x64"
-      />
-    </Helmet>
-    <Main>
-      <VideoBackground autoPlay muted loop importance="high">
-        <source src="output.mp4" type="video/mp4"/>
-      </VideoBackground>
-      <Logo>
-        <LogoHov>HOV</LogoHov>
-        &nbsp;
-        <LogoAR>AR</LogoAR>
-      </Logo>
-      <Subheading><Typist className="MyTypist" cursor={{hideWhenDone:true}}><Typist.Delay ms={1000} />Changing Realities!</Typist></Subheading>
-      <Arrowdown>
-        <a href="#mission" onClick={handleArrowClick}>
-          <FontAwesomeIcon icon="arrow-down" color="#fff" size="2x" />
-        </a>
-      </Arrowdown>
-    </Main>
+export default class HovAR extends React.Component {
+  state = {
+    url: "https://www.youtube.com/embed/nwnItPjI17U?enablejsapi=1",
+    playing: true,
+    muted: true,
+    loop: true,
+    firstTime: true,
+  }
+  handlePause = () => {
+    console.log("onPause")
+    this.setState({ playing: false })
+  }
+  handlePlay = () => {
+    console.log("onPlay")
+    this.setState({ playing: true })
+  }
+  toggleMute = () => {
+    this.setState({ muted: !this.state.muted })
+  }
+  handlePreLoad = () => {
+    if (this.state.firstTime) {
+      this.setState({ firstTime: false })
+      console.log("Stopping for the first time")
+      this.handlePause()
+      this.toggleMute()
+    } else {
+      console.log("Not First Time")
+    }
+  }
 
-    <Mission id="mission">
-      <MissionBody>
-        <MissionHead>Mission</MissionHead>
-          <MissionDesc>
-            Revolutionize Education, HealthCare, Marketing, Entertainment industries and solve any and all problems that we may 
-            encounter on our journey using <HighlightReel>Augmented and Virtual Reality</HighlightReel>&amp;<br></br>
-            To make Augmented and Virtual Reality more accessible and it's experience user-friendly and fulfilling.
-          </MissionDesc>
-      </MissionBody>
-    </Mission>
+  render() {
+    const { url, playing, muted, loop } = this.state
 
-    <Why id="whyus">
-      <Whyus>
-        <Whyheading>Why Us?</Whyheading>
-        <WhyContent>
-          <WhyDesc>
-            <Whytext>
-              We are working with AR and VR technology for 2 years now and we have first hand experienced the rapid developments in the field,
-              experimenting and learning it's different aspects along the way.
-              Here are some of our public projects we have worked on
-              and presented in various events to get valuable inputs and scope for improvements because <br></br>"To Learn is to Grow!"<br></br>
-              So check these out and if they pique your interest or raise any queries connect with us. We would love to solve your problems. 
-            </Whytext>
-            <WhyButtons><WhyButton1>App 1</WhyButton1><WhyButton2>App 2</WhyButton2><WhyButton3>App 3</WhyButton3><WhyButton4>App 4</WhyButton4></WhyButtons>
-          </WhyDesc>
-          <WhyGraphic>
-            <iframe title="DemoProject" src="https://www.youtube.com/embed/nwnItPjI17U?enablejsapi=1" frameBorder="0" loop style={{position: "absolute", top: 0, left: 0, width: "100%",height: "100%", objectFit: "cover", zIndex: 2, borderRadius: "10px"}}></iframe>
-          </WhyGraphic>
-        </WhyContent>
-      </Whyus>
-    </Why>
+    return (
+      <Container>
+        <GlobalStyle />
+        <Helmet>
+          <meta charset="utf-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <meta name="hovAR" content="Changing Realities!" />
+          <title>hovAR</title>
+          <link rel="icon" type="image/png" href="icon.png" sizes="64x64" />
+        </Helmet>
 
-    <ContactSection>
-      <FindHead>Let's Get In Touch!</FindHead>
-      <IconsContainer>
-        <Alink href="https://github.com/team-tstar/" target="_blank">
-          <GithubLink>
-            <FontAwesomeIcon icon = {['fab', 'github']} color="#fff" size="5x"></FontAwesomeIcon>
-          </GithubLink>
-        </Alink>
-        <Alink href="mailto:tripathi.yugandhar@gmail.com?cc=Neel.kukreti23@gmail.com&amp;subject=Enquiry%20from%20Website" target="_blank">
-          <EmailLink>
-            <FontAwesomeIcon icon = "envelope" color="#f00" size="5x"></FontAwesomeIcon>
-          </EmailLink>
-        </Alink>
-        <Alink href="https://www.linkedin.com/company/hov-ar" target="_blank">
-          <LinkedINLink>
-            <FontAwesomeIcon icon = {['fab', 'linkedin']} color="#3399ff" size="5x"></FontAwesomeIcon>
-          </LinkedINLink>
-        </Alink>
-      </IconsContainer>
-    </ContactSection>
-    <Footer>
-      Coded with&nbsp;<FontAwesomeIcon icon="heart" color="#f00" size="2x"/>&nbsp;by&nbsp;<Alink href="https://www.linkedin.com/in/yugandhar-tripathi/" target="_blank">@Yugandhartripathi</Alink>;
-    </Footer>
-  </Container>
-);
+        <Main>
+          <VideoBackground autoPlay muted loop importance="high">
+            <source src="output.mp4" type="video/mp4" />
+          </VideoBackground>
+          <Logo>
+            <LogoHov>HOV</LogoHov>
+            &nbsp;
+            <LogoAR>AR</LogoAR>
+          </Logo>
+          <Subheading>
+            <Typist className="MyTypist" cursor={{ hideWhenDone: true }}>
+              <Typist.Delay ms={1000} />
+              Changing Realities!
+            </Typist>
+          </Subheading>
+          <Arrowdown>
+            <a href="#mission" onClick={handleArrowClick}>
+              <FontAwesomeIcon icon="arrow-down" color="#fff" size="2x" />
+            </a>
+          </Arrowdown>
+        </Main>
+
+        <Mission id="mission">
+          <MissionBody>
+            <MissionHead>Mission</MissionHead>
+            <MissionDesc>
+              Revolutionize Education, HealthCare, Marketing, Entertainment
+              industries and solve any and all problems that we may encounter on
+              our journey using{" "}
+              <HighlightReel>Augmented and Virtual Reality</HighlightReel>&amp;
+              <br></br>
+              To make Augmented and Virtual Reality more accessible and it's
+              experience user-friendly and fulfilling.
+            </MissionDesc>
+          </MissionBody>
+        </Mission>
+
+        <Why
+          id="whyus"
+          onMouseEnter={this.handlePlay}
+          onMouseLeave={this.handlePause}
+        >
+          <Whyus>
+            <Whyheading>Why Us?</Whyheading>
+            <WhyContent>
+              <WhyDesc>
+                <Whytext>
+                  We are working with AR and VR technology for 2 years now and
+                  we have first hand experienced the rapid developments in the
+                  field, experimenting and learning it's different aspects along
+                  the way. Here are some of our public projects we have worked
+                  on and presented in various events to get valuable inputs and
+                  scope for improvements because <br></br>"To Learn is to Grow!"
+                  <br></br>
+                  So check these out and if they pique your interest or raise
+                  any queries connect with us. We would love to solve your
+                  problems.
+                </Whytext>
+                <WhyButtons>
+                  <WhyButton1>App 1</WhyButton1>
+                  <WhyButton2>App 2</WhyButton2>
+                  <WhyButton3>App 3</WhyButton3>
+                  <WhyButton4>App 4</WhyButton4>
+                </WhyButtons>
+              </WhyDesc>
+              <WhyGraphic>
+                <ResponsivePlayer
+                  onReady={() => console.log("DemoVideo Ready")}
+                  onStart={this.handlePreLoad}
+                  url={url}
+                  width="100%"
+                  height="100%"
+                  playing={playing}
+                  muted={muted}
+                  loop={loop}
+                  config={{
+                    youtube: {
+                      playerVars: {
+                        modestbranding: 1,
+                        fs: 0,
+                        start: 30,
+                      },
+                      preload: true,
+                    },
+                  }}
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    objectFit: "cover",
+                    zIndex: 2,
+                    border: "5px solid #242424",
+                    borderRadius: "10px",
+                  }}
+                />
+              </WhyGraphic>
+            </WhyContent>
+          </Whyus>
+        </Why>
+
+        <ContactSection>
+          <FindHead>Let's Get In Touch!</FindHead>
+          <IconsContainer>
+            <Alink href="https://github.com/team-tstar/" target="_blank">
+              <GithubLink>
+                <FontAwesomeIcon
+                  icon={["fab", "github"]}
+                  color="#fff"
+                  size="5x"
+                ></FontAwesomeIcon>
+              </GithubLink>
+            </Alink>
+            <Alink
+              href="mailto:tripathi.yugandhar@gmail.com?cc=Neel.kukreti23@gmail.com&amp;subject=Enquiry%20from%20Website"
+              target="_blank"
+            >
+              <EmailLink>
+                <FontAwesomeIcon
+                  icon="envelope"
+                  color="#f00"
+                  size="5x"
+                ></FontAwesomeIcon>
+              </EmailLink>
+            </Alink>
+            <Alink
+              href="https://www.linkedin.com/company/hov-ar"
+              target="_blank"
+            >
+              <LinkedINLink>
+                <FontAwesomeIcon
+                  icon={["fab", "linkedin"]}
+                  color="#3399ff"
+                  size="5x"
+                ></FontAwesomeIcon>
+              </LinkedINLink>
+            </Alink>
+          </IconsContainer>
+        </ContactSection>
+        <Footer>
+          Coded with&nbsp;
+          <FontAwesomeIcon icon="heart" color="#f00" size="2x" />
+          &nbsp;by&nbsp;
+          <Alink
+            href="https://www.linkedin.com/in/yugandhar-tripathi/"
+            target="_blank"
+          >
+            @Yugandhartripathi
+          </Alink>
+          ;
+        </Footer>
+      </Container>
+    )
+  }
+}
