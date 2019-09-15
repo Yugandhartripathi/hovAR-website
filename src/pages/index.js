@@ -62,7 +62,7 @@ const Main = styled.div`
 `;
 
 const VideoBackground = styled.video`
-  min-height: 100vh;
+  height: 110vh;
   width: 100%;
   position: absolute;
   z-index: 1;
@@ -617,15 +617,6 @@ const handleArrowClick = e => {
 
   // scroll the element into view
   document.querySelector(targetQuery).scrollIntoView({ behavior: "smooth" });
-
-  // set the URL hash to the href attribute
-  /*
-  if (window.history.pushState) {
-    window.history.pushState(null, null, targetQuery);
-  } else {
-    window.location.hash = targetQuery;
-  }
-  */
 };
 
 /* Main */
@@ -644,13 +635,13 @@ export default () => (
       <link
         rel="icon"
         type="image/png"
-        href="https://www.pngfind.com/pngs/m/75-751525_luffy-roronoa-zoro-monkey-d-luffy-one-piece.png"
-        sizes="32x32"
+        href="icon.png"
+        sizes="64x64"
       />
     </Helmet>
     <Main>
-      <VideoBackground autoPlay loop>
-        <source src="output.mp4" type="video/mp4" />
+      <VideoBackground autoPlay muted loop importance="high">
+        <source src="output.mp4" type="video/mp4"/>
       </VideoBackground>
       <Logo>
         <LogoHov>HOV</LogoHov>
@@ -690,7 +681,9 @@ export default () => (
             </Whytext>
             <WhyButtons><WhyButton1>App 1</WhyButton1><WhyButton2>App 2</WhyButton2><WhyButton3>App 3</WhyButton3><WhyButton4>App 4</WhyButton4></WhyButtons>
           </WhyDesc>
-          <WhyGraphic><iframe title="DemoProject" src="https://www.youtube.com/embed/nwnItPjI17U" frameBorder="0" autoPlay loop allowFullScreen style={{position: "absolute", top: 0, left: 0, width: "100%",height: "100%", objectFit: "cover", zIndex: 2}}></iframe></WhyGraphic>
+          <WhyGraphic>
+            <iframe title="DemoProject" src="https://www.youtube.com/embed/nwnItPjI17U?enablejsapi=1" frameBorder="0" loop style={{position: "absolute", top: 0, left: 0, width: "100%",height: "100%", objectFit: "cover", zIndex: 2, borderRadius: "10px"}}></iframe>
+          </WhyGraphic>
         </WhyContent>
       </Whyus>
     </Why>
